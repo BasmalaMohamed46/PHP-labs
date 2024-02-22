@@ -23,24 +23,11 @@ function display_all_submits(){
     foreach($lines as $line){
         echo "<h3>New User Details</h3>";
         $userData=explode(",",$line);
-        $i=0;
-        foreach($userData as $data){
-          switch($i){
-            case 0:
-                echo "<h5>Visit Date:$data</h5>";
-                break;
-            case 1:
-              echo "<h5>IP Address:$data</h5>";
-              break;
-            case 2:
-              echo "<h5>Email:$data</h5>";
-              break;
-            case 3:
-              echo "<h5>Name:$data</h5>";
-              break;
-            }
-        $i++;
-        }
+        echo "<h5>Visit Date:$userData[0]</h5>";
+        echo "<h5>IP Address:$userData[1]</h5>";
+        echo "<h5>Email:$userData[2]</h5>";
+        echo "<h5>Name:$userData[3]</h5>";
+        
     echo "<hr>";
    }
 }
