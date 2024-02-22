@@ -53,21 +53,30 @@
     <title>Contact Form</title>
 </head>
 <body>
-    <form  method="post" action="form.php">
-        <h1>Contact Form</h1>
-        <h3><?php echo $errMsg; ?> </h3>
-        <label for="name">Your Name</label>
+   
+        <h3>Contact Form</h3>
+        <div id="after_submit">
+        <?php echo $errMsg; ?> 
+        </div>
+        <form  method="post" action="form.php" id="contact_form" enctype="multipart/form-data">
+        <div class="row">
+        <label for="name" class="required">Your Name:</label>
         <br>
-        <input type="text" name="name" id="name" value="<?php echo $name; ?>">
+        <input type="text" name="name" id="name" class="input" value="<?php echo $name; ?>">
         <br>
-        <label for="email">Your Email</label>
+        </div>
+        <div class="row">
+        <label for="email" class="required">Your Email:</label>
         <br>
-        <input type="text" name="email" id="email" value="<?php echo $email; ?>">
+        <input type="text" name="email" id="email" class="input" value="<?php echo $email; ?>" size="30">
         <br>
-        <label for="message">Your Message</label>
+        </div>
+        <div class="row">
+        <label for="message" class="required">Your Message:</label>
         <br>
-        <textarea name="message" id="message" rows="8" cols="30" ><?php echo $message; ?></textarea>
+        <textarea name="message" id="message" class="input" rows="7" cols="30" ><?php echo $message; ?></textarea>
         <br>
+        </div>
         <input type="submit" name="submit" value="Send Email">
         <input type="submit" name="reset" value="Clear Form" >
     </form>
